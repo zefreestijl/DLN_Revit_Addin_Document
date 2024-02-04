@@ -1,0 +1,183 @@
+:root{    
+  --color_grey: #d6d6d6;
+  --color_grey_dark: #747474;
+  --color_grey_light: #f5f5f5;
+
+  --icon_color_hover: #eb6c6c;
+  --width_expand: 21.3rem;
+  --width_content: 18.8rem;
+}
+
+
+
+
+
+  /* 0a. Icon - Play */
+  .tool1{
+    font-size: 60px; color: var(--color_grey_dark);
+    position: relative; 
+    align-content: center;
+    text-align: center; vertical-align: middle;
+  }
+
+
+
+  .icon_playback1{    
+    opacity: 0; 
+    transition: all .2s linear;
+
+    position: relative; 
+    text-align: center; vertical-align: middle;
+  }
+
+
+  /* 1a. Title - Layout */
+  #btn_title0{
+    background-color: rgb(1,1,1, 0); 
+    margin-bottom: 10px; border: none; 
+    width: 100%; height: 20px;
+  }
+  #btn_title0:hover{
+    background-color: var(--color_grey);
+
+    box-shadow: 0 2px 4px rgba(0,0,0, .2);
+  }
+
+  
+  #page_title1{ 
+    float: left; width:50%; font-weight: bold; 
+    text-align: left; padding-left: 10px;
+
+  }
+
+  /*
+  #page_title1:hover{ 
+    
+    cursor: ns-resize;
+  }
+  */
+  
+  #page_title2{
+    color: var(--color_grey_dark);
+    text-align: right;  padding-right: 10px;  
+    float: right; width:25%; 
+  }
+
+
+  /* 1b. Title - Icon*/
+.bx:not(.icon_playback1):hover{
+    color: var(--icon_color_hover);
+    
+}
+
+
+.panel0{  
+  padding-left: 2px;
+  overflow-y: scroll;
+  max-height: 90%;
+  overflow-x: hidden;
+}
+
+
+
+/* 2a. Expand - Layout */
+.collapsible1 {
+    background-color:var(color_grey_light); color: var(--color_grey_dark);
+    cursor: pointer; height: 35px;
+    padding: 5px; width: var(--width_expand);
+    padding-right: 13px;
+    text-align: left; outline: none;
+    font-size: 15px; font-weight: bolder;
+    
+    left: 2px; position: relative;
+    border: none;
+  }
+  
+.active1, .collapsible1:hover {
+    background-color:  var(--color_grey);
+  }
+  
+.collapsible1:after {
+    content: '\002B'; color: white;
+    font-weight: bold; float: right; margin-left: 5px; 
+  }
+
+  .active1:after {
+    content: "\2212";
+  }
+  
+
+
+.content1 {  
+  background-size: 100%; background-repeat: no-repeat;
+    padding: 0 18px; max-height: 0; overflow: hidden; 
+    width: var(--width_content);
+
+    transition: max-height 0.2s ease-out; 
+    background-color: var(--color_grey_light);
+    
+    left: 2px; position: relative;
+    border: none;
+  }
+
+
+  .break1{
+    height: 5px;
+    
+  }
+
+
+  /* 2b. Expand - Hover */
+  .collapsible1:hover{
+    box-shadow: 0 2px 4px rgba(0,0,0, .2);
+
+    
+  }
+
+  .content1:hover{
+    background-size: 101%;    
+    box-shadow: 0 2px 4px rgba(0,0,0, .2);    
+  }
+
+
+
+
+  /* 3. Scroll Bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--color_grey); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color_grey_dark); 
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+
+/* 4. Intro0 */
+.intro0{
+  user-select: none;
+  font-size: 12px;  padding: 0px;
+  text-align: left;
+  color: var(--color_grey_dark);
+
+  word-wrap: break-word; white-space: pre-wrap;
+  line-height: 17px;
+}
+    
+#intro_title1
+{
+  font-weight: bold; font-size: 13px;
+}
