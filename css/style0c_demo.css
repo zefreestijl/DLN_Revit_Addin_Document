@@ -83,6 +83,11 @@
     font-weight: bold; 
   }
 
+  #demo_title2
+  {
+    color: darkred; background-color: #ffe4e4;
+  }
+
   #demo_space{
     letter-spacing: 90px;
   }
