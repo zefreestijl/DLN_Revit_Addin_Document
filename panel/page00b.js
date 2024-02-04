@@ -179,7 +179,7 @@ function func_highlightTool_Red(e, coll)
     
 
     if (html1 != null)
-        frame0c.src = "../demo/demo" + html1 + ".html";
+        frame0c.src = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html";
 
 
 }
