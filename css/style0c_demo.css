@@ -105,7 +105,7 @@
 
   swiper-container {
     position: relative;
-    width: 90%;  
+    width: 90%;  height: 90%; 
   }
 
   swiper-slide { 
