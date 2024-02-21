@@ -7,8 +7,8 @@ window.addEventListener('load', (function () {
 
     left0b = document.getElementsByClassName('left0b')[0];
 
-    var test1 = document.getElementById("test1");
-    test1.firstChild.data = this.navigator.userAgent;
+    //var test1 = document.getElementById("test1");
+    //test1.firstChild.data = this.navigator.userAgent;
     
 })) ;
 
