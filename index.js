@@ -13,6 +13,7 @@ window.addEventListener('load', (function () {
 })) ;
 
 
+
 // Collapse Left Panel
 document.addEventListener('click', function(e){
     //console.log(window.getComputedStyle(left0b).width);

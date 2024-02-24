@@ -177,11 +177,18 @@ function func_highlightTool_Red(e, coll)
         var html1 = arrDemo9[currentHighlight1];
 
     
-
-    if (html1 != null)
+    try
+    {
+        fetch("../demo/demo" + html1 + ".html")
+        frame0c.src = "../demo/demo" + html1 + ".html";  // for Live Server
+    }
+    catch{
+        
         frame0c.src = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html"; // for Git Pages
-        //frame0c.src = "../demo/demo" + html1 + ".html";  // for Live Server
 
+    }
+    
+        
 }
 
 

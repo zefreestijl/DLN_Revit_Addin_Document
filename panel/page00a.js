@@ -4,6 +4,7 @@ var window1 = window;
 
 const arr_btn_icon1 = document.getElementsByClassName("top_btn");
 
+var html1 = null;
 
 //
 window.onload = (function () {
@@ -52,11 +53,22 @@ function func_switchPanel(e)
 
     // 2b. Change iFrame Demo Page by Current Highlight
     var frame0c = document.getElementsByClassName('iframe0c')[0];
-    //var html1 = "../demo/demo" + index1 + ".html"; // for Live Server
-    var html1 = "../DLN_Revit_Addin_Document/demo/demo" + index1 + ".html"; // for Git Pages
 
-    if (html1 != null)
-        frame0c.src = html1;
+
+    
+    try
+    {
+        html1 = "http://127.0.0.1:5500/demo/demo" + index1 + ".html";  // for Live Server
+
+        fetch(html1)
+    }
+    catch{        
+        html1 = "../DLN_Revit_Addin_Document/demo/demo" + index1 + ".html"; // for Git Pages
+
+    }
+    
+
+    frame0c.src = html1;
 
 }
 
