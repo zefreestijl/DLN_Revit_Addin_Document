@@ -184,7 +184,8 @@ function func_highlightTool_Red(e, coll)
     else
         html1 = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html"; // for Git Pages
 
-        frame0c.src = html1;
+        
+    frame0c.src = html1;
     
     
         
