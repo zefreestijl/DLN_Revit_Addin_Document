@@ -176,17 +176,16 @@ function func_highlightTool_Red(e, coll)
     else if($(".panel0")[0].id == "page09")
         var html1 = arrDemo9[currentHighlight1];
 
-    
-    try
-    {
-        fetch("../demo/demo" + html1 + ".html")
-        frame0c.src = "../demo/demo" + html1 + ".html";  // for Live Server
-    }
-    catch{
-        
-        frame0c.src = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html"; // for Git Pages
 
-    }
+
+    if (window.location.href.includes('127.0.0.1'))
+        html1 = "http://127.0.0.1:5500/demo/demo" + html1 + ".html";  // for Live Server
+
+    else
+        html1 = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html"; // for Git Pages
+
+        frame0c.src = html1;
+    
     
         
 }

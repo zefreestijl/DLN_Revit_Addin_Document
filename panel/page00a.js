@@ -54,19 +54,12 @@ function func_switchPanel(e)
     // 2b. Change iFrame Demo Page by Current Highlight
     var frame0c = document.getElementsByClassName('iframe0c')[0];
 
-
-    
-    try
-    {
+    if (window.location.href.includes('127.0.0.1'))
         html1 = "http://127.0.0.1:5500/demo/demo" + index1 + ".html";  // for Live Server
 
-        fetch(html1)
-    }
-    catch{        
+    else
         html1 = "../DLN_Revit_Addin_Document/demo/demo" + index1 + ".html"; // for Git Pages
 
-    }
-    
 
     frame0c.src = html1;
 
