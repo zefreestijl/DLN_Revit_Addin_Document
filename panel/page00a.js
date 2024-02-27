@@ -78,8 +78,15 @@ function func_switchPanel(e)
     if (window.location.href.includes('127.0.0.1'))
         html1 = "http://127.0.0.1:5500/demo/demo" + index1 + ".html";  // for Live Server
 
+    else if (window.location.href.includes('192.168.3.103'))
+    html1 = "http://192.168.3.103:5500/demo/demo" + index1 + ".html";  // for Live Server - WIFI
+
+    else if (window.location.href.includes('172.18.100.21'))
+    html1 = "http://172.18.100.21:5500/demo/demo" + index1 + ".html";  // for Live Server - PC
+
     else
         html1 = "../DLN_Revit_Addin_Document/demo/demo" + index1 + ".html"; // for Git Pages
+
 
 
     frame0c.src = html1;
