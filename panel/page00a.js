@@ -4,6 +4,7 @@ var window1 = window;
 
 const arr_btn_icon1 = document.getElementsByClassName("top_btn");
 
+var html1 = null;
 
 //
 window.onload = (function () {
