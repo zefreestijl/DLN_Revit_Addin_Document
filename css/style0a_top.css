@@ -122,22 +122,22 @@
 /* Icon Color */
 .btn_icon1{
     color: var(--icon_color_btn_icon1);
-    opacity: .3;
+    opacity: .5;
 }
 
 .btn_icon2{
     color: var(--icon_color_btn_icon2);
-    opacity: .3;
+    opacity: .5;
 }
 
 .btn_icon3{
     color: var(--icon_color_btn_icon3);
-    opacity: .3;
+    opacity: .5;
 }
 
 .btn_icon4{
     color: var(--icon_color_btn_icon4);
-    opacity: .3;
+    opacity: .5;
 }
 
 
