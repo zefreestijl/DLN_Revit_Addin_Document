@@ -7,7 +7,7 @@ const arrDemo4 = ["4a", "4b"];
 const arrDemo5 = ["5a", "5aa", "5b", "5c", "5cc"];
 const arrDemo6 = ["6a", "6aa", "6b", "6c", "6cc"];
 const arrDemo7 = ["7b", "7bb", "7c", "7d"];
-const arrDemo8 = ["8a", "8aa", "8b" ];
+const arrDemo8 = ["8a", "8aa", "8b", "8c"];
 const arrDemo9 = ["9a", "9aa", "9b","9bb", "9c", "9cc", "9d" ];
 
 
