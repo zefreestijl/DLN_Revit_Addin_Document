@@ -19,7 +19,8 @@
     font-size: 15px; color: var(--icon_color_basic);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     user-select: none;
-    
+
+    height: 7px;
 }
 
 #gp1,#gp2{
@@ -47,9 +48,10 @@
 }
 
 
+
 /* */
 .top0a{
-    padding-top: 2px;
+    padding-top: 5px;
 
     align-content: center;
     text-align: center;
