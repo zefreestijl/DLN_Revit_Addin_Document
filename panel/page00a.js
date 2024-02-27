@@ -41,7 +41,7 @@ function func_switchPanel(e)
 
             var index1 = btn1.id.charAt(4);
             var bx = document.getElementsByClassName("bx")[index1];
-            bx.style.opacity = .3;
+            bx.style.opacity = .9;
         }
             
                     
@@ -52,6 +52,9 @@ function func_switchPanel(e)
 
         if (x.innerText == id1.charAt(id1.length-1))
         {
+            x.style.color = "#eb6c6c";
+            x.style.zIndex = 2;
+            /*
             if (x.classList[1].includes('1'))
                 x.style.color = "burlywood";
 
@@ -63,10 +66,15 @@ function func_switchPanel(e)
             
             else if (x.classList[1].includes('4'))
                 x.style.color = "darkkhaki";
+            */
         }
             
         else
+        {
             x.style.color = "#d1d1d1";
+            x.style.zIndex = -2;
+        }
+            
     })
 
     
