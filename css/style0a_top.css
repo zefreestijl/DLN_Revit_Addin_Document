@@ -5,26 +5,57 @@
     --icon_color_under: #181818;
     --icon_color_size: 27px;
 
+    --icon_color_btn_icon1: burlywood;
+    --icon_color_btn_icon2: darkseagreen;
+    --icon_color_btn_icon3: lightskyblue;
+    --icon_color_btn_icon4: darkkhaki;
 }
 
+
+
+/* */
+#gp1,#gp2,#gp3,#gp4{
+    float: left; text-align: center; 
+    font-size: 15px; color: var(--icon_color_basic);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    user-select: none;
+    
+}
+
+#gp1,#gp2{
+    width: 30%;
+}
+#gp3,#gp4{
+    width: 20%;
+}
+
+#gp1{    
+    background-image: 
+    linear-gradient(180deg, var(--icon_color_btn_icon1), white);
+}
+#gp2{    
+    background-image: 
+    linear-gradient(180deg, var(--icon_color_btn_icon2), white);
+}
+#gp3{    
+    background-image: 
+    linear-gradient(180deg, var(--icon_color_btn_icon3), white);
+}
+#gp4{    
+    background-image: 
+    linear-gradient(180deg, var(--icon_color_btn_icon4), white);
+}
+
+
+/* */
 .top0a{
-    padding-top: 10px;
+    padding-top: 2px;
+
     align-content: center;
     text-align: center;
 
     justify-content: space-evenly;
     display: flex; flex:1;
-}
-
-.btn_icon1:hover{
-    color: var(--icon_color_hover);
-}
-
-
-.btn_icon1{
-    font-size: var(--icon_color_size);
-    color: var(--icon_color_basic);
-    letter-spacing: -0px; 
 }
 
 
@@ -36,6 +67,8 @@
 }
 
 
+
+
 #page_title1{
     font-size: 13px; color: var(--icon_color_basic); font-weight: bolder;    
 }
@@ -44,15 +77,70 @@
 /* Scroll Active*/
 .active-page{
     position: relative;
-    color: var(--icon_color_hover);
+    /*color: var(--icon_color_hover);*/
 }
 
 .active-page::after{
     content: '';
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.2rem;
     left: 0;
     width: 90%;
     height: 3px;
-    background-color: var(--icon_color_hover);
+    /*background-color: var(--icon_color_hover);*/
 }
+
+
+
+
+
+/* Icon Hover - Color */
+#btn00::after,#btn01::after,#btn02::after{
+    background-color: var(--icon_color_btn_icon1);
+
+}
+
+#btn03::after,#btn04::after,#btn05::after{
+    background-color: var(--icon_color_btn_icon2);
+
+}
+
+#btn06::after,#btn07::after{
+    background-color: var(--icon_color_btn_icon3);
+
+}
+
+#btn08::after,#btn09::after{
+    background-color: var(--icon_color_btn_icon4);
+
+}
+
+
+
+/* Icon Color */
+.btn_icon1{
+    color: var(--icon_color_btn_icon1);
+    opacity: .3;
+}
+
+.btn_icon2{
+    color: var(--icon_color_btn_icon2);
+    opacity: .3;
+}
+
+.btn_icon3{
+    color: var(--icon_color_btn_icon3);
+    opacity: .3;
+}
+
+.btn_icon4{
+    color: var(--icon_color_btn_icon4);
+    opacity: .3;
+}
+
+
+.btn_icon1,.btn_icon2,.btn_icon3,.btn_icon4{
+    font-size: var(--icon_color_size);
+    letter-spacing: -0px; 
+}
+

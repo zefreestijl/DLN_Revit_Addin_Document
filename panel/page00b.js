@@ -8,7 +8,7 @@ const arrDemo5 = ["5a", "5aa", "5b", "5c", "5cc"];
 const arrDemo6 = ["6a", "6aa", "6b", "6c", "6cc"];
 const arrDemo7 = ["7b", "7bb", "7c", "7d"];
 const arrDemo8 = ["8a", "8aa", "8b" ];
-const arrDemo9 = ["9a", "9aa", "9b","9bb", "9c" ];
+const arrDemo9 = ["9a", "9aa", "9b","9bb", "9c", "9cc", "9d" ];
 
 
 window.onload = (function () {
@@ -19,13 +19,14 @@ window.onload = (function () {
 
 
     // 1. Title Controller
-    const btn_title0 = document.getElementById('btn_title0');
+    const btn_title0 = document.getElementsByClassName('btn_title0')[0];
 
-    btn_title0.addEventListener('click', ()=>
+    btn_title0.addEventListener('click', (e)=>
     {
         func_expand_controll(coll)
         func_expand_controll(coll)
         func_expand_controll(coll)
+            
     });
 
 
@@ -49,11 +50,24 @@ window.onload = (function () {
         {
             var content1 = coll[i].nextElementSibling;   
             
+            var color1 = "#747474";
+
+            if (content1.id.includes('1'))
+                color1 = "burlywood";
+            else if (content1.id.includes('2'))
+                color1 = "darkseagreen";
+            else if (content1.id.includes('3'))
+                color1 = "lightskyblue";
+            else if (content1.id.includes('4'))
+                color1 = "darkkhaki";
+            
             if (currentHighlight1 != i)
             {
                 coll[i].style.color = "#747474";
-                coll[i].style.borderStyle = "none";
-                content1.style.borderStyle = "none";
+                coll[i].style.borderColor = color1;
+
+                //coll[i].style.borderStyle = "none";
+                //content1.style.borderStyle = "none";
                     
 
             }
@@ -67,11 +81,27 @@ window.onload = (function () {
         {
             var content1 = coll[i].nextElementSibling;   
             
+            var color1 = "#747474";
+
+            if (content1.id.includes('1'))
+                color1 = "burlywood";
+            else if (content1.id.includes('2'))
+                color1 = "darkseagreen";
+            else if (content1.id.includes('3'))
+                color1 = "lightskyblue";
+            else if (content1.id.includes('4'))
+                color1 = "darkkhaki";
+            
+                
             if (currentHighlight1 != i)
             {
                 coll[i].style.color = "#747474";
-                coll[i].style.borderStyle = "none";
-                content1.style.borderStyle = "none";
+                
+                coll[i].style.borderColor = color1;
+                content1.style.borderColor = color1;
+
+                //coll[i].style.borderStyle = "none";
+                //content1.style.borderStyle = "none";
                     
 
             }
@@ -105,7 +135,19 @@ function func_highlightTool_Red(e, coll)
         //console.log( Array.from(e.target.classList).includes('bx') );        
         //console.log( e.target.parentNode.id === $(".tool1")[i].id );
 
+        var color1 = "#747474";
 
+        if (content1.id.includes('1'))
+            color1 = "burlywood";
+        else if (content1.id.includes('2'))
+            color1 = "darkseagreen";
+        else if (content1.id.includes('3'))
+            color1 = "lightskyblue";
+        else if (content1.id.includes('4'))
+            color1 = "darkkhaki";
+
+
+        //
         if ($(".tool1")[i].id === e.target.id 
         || e.target.parentNode.id === $(".tool1")[i].id)
         {
@@ -130,9 +172,13 @@ function func_highlightTool_Red(e, coll)
             
         else
         {
-            coll[i].style.color = "#747474";
-            coll[i].style.borderStyle = "none";
-            content1.style.borderStyle = "none";
+            coll[i].style.color = "#747474";            
+            coll[i].style.borderColor = color1;
+
+            content1.style.borderColor = color1;
+
+            //coll[i].style.borderStyle = "none";
+            //content1.style.borderStyle = "none";
             
             if ($(".icon_playback1")[i] != null)
                 $(".icon_playback1")[i].style.opacity = .0;
@@ -178,19 +224,38 @@ function func_highlightTool_Red(e, coll)
 
     
 
-    if (html1 != null)
-        frame0c.src = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html"; // for Git Pages
-        //frame0c.src = "../demo/demo" + html1 + ".html";  // for Live Server
+    if (window.location.href.includes('127.0.0.1'))
+    html1 = "http://127.0.0.1:5500/demo/demo" + html1 + ".html";  // for Live Server
+
+    else
+        html1 = "../DLN_Revit_Addin_Document/demo/demo" + html1 + ".html"; // for Git Pages
+
+        
+    frame0c.src = html1;
+
 
 }
 
 
 function func_highlightTool_Grey(e, coll)
 {
+    var color1 = "#747474";
+
+
     for (var i=0; i < $(".tool1").length; i++ )
     {
         var content1 = coll[i].nextElementSibling;   
         
+        if (content1.id.includes('1'))
+            color1 = "burlywood";
+        else if (content1.id.includes('2'))
+            color1 = "darkseagreen";
+        else if (content1.id.includes('3'))
+            color1 = "lightskyblue";
+        else if (content1.id.includes('4'))
+            color1 = "darkkhaki";
+
+
         if (currentHighlight1 != i)
         {
             if ($(".tool1")[i].id === e.target.id
@@ -198,12 +263,12 @@ function func_highlightTool_Grey(e, coll)
             {            
                 coll[i].style.color = "#d33939";
 
-                coll[i].style.borderColor = "#747474";
+                coll[i].style.borderColor = "747474";
                 coll[i].style.borderWidth = "2px";
                 coll[i].style.borderStyle = "solid";
                 coll[i].style.borderBottom = "none";
 
-                content1.style.borderColor = "#747474";
+                content1.style.borderColor = "747474";
                 content1.style.borderWidth = "2px";
                 content1.style.borderStyle = "solid";
                 content1.style.borderTop = "none";
@@ -211,9 +276,13 @@ function func_highlightTool_Grey(e, coll)
                 
             else
             {
-                coll[i].style.color = "#747474";
-                coll[i].style.borderStyle = "none";
-                content1.style.borderStyle = "none";
+                coll[i].style.color = "747474";
+                
+                coll[i].style.borderColor = color1;
+                content1.style.borderColor = color1;
+
+                //coll[i].style.borderStyle = "none";
+                //content1.style.borderStyle = "none";
             }                
 
         }
@@ -233,7 +302,6 @@ function func_expand_controll(coll)
 
     for (i = 0; i < coll.length; i++) {
         var content = coll[i].nextElementSibling;      
-
 
         coll[i].classList.toggle("active1");  
         
@@ -285,40 +353,5 @@ function func_expand_init(coll)
 
         });
     }
-    
-}
-
-
-var startX1 = null; var endX1 = null;
-var startY1 = null; var endY1 = null;
-
-document.addEventListener("touchstart", function(e)
-{ 
-    startX1 = e.touches[0].clientX;
-    startY1 = e.touches[0].clientY;
-} )
-
-document.addEventListener("touchend", function(e){ func_slideCheck(e) } )
-
-function func_slideCheck(e)
-{
-  var left0b = this.top.document.getElementsByClassName('left0b')[0];
-
-  endX1 = e.changedTouches[0].clientX;
-  endY1 = e.changedTouches[0].clientY;
-
-  if (Math.abs(endY1 - startY1) > Math.abs(endX1 - startX1))
-    return;
-
-  if (endX1 - startX1 < -30)
-  {
-    if (window.getComputedStyle(left0b).width == "22rem" || !left0b.style.display)
-    {
-        left0b.style.width = "0px";
-        left0b.style.opacity = 0;
-    }
-    
-        
-  }
     
 }
