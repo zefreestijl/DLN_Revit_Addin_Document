@@ -18,11 +18,7 @@ window.onload = (function () {
     });
 
     
-    // Renew Current Icon if Demo Changed
-    var frame0c = document.getElementsByClassName('iframe0c')[0];
-    frame0c.addEventListener
-
-    console.log(typeof(frame0c));
+    
 });
 
 function func_changeHighlight(e)
