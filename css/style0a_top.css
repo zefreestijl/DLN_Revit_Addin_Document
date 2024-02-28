@@ -66,6 +66,7 @@
     font-size: 30px; font-weight: bold; color: var(--icon_color_light);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative; left: -10px; letter-spacing: -10px; 
+    user-select: none;
 }
 
 
