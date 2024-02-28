@@ -12,11 +12,78 @@ window.onload = (function () {
     {        
         btn1.addEventListener('click', func_switchPanel);
 
-        btn1.addEventListener('mouseenter', func_previewPanel);
+
+        btn1.addEventListener('mouseenter', func_previewPanel);        
+        btn1.addEventListener('mouseleave', func_changeHighlight);
     });
 
     
+    // Renew Current Icon if Demo Changed
+    var frame0c = document.getElementsByClassName('iframe0c')[0];
+    frame0c.addEventListener
+
+    console.log(typeof(frame0c));
 });
+
+function func_changeHighlight(e)
+{
+    
+    var iframe0b = document.getElementsByClassName('iframe0b')[0];
+
+    var index1 = iframe0b.src.charAt(iframe0b.src.length-6);
+    var id1 = "btn0" + index1;
+
+    // Change Class of Scroll Active-Page
+    Array.prototype.forEach.call(arr_btn_icon1, btn1 => 
+    {     
+        
+        if (btn1.id == id1)
+        {
+            btn1.classList.add('active-page');
+
+            
+            var index1 = btn1.id.charAt(4);
+            var bx = document.getElementsByClassName("bx")[index1];
+            bx.style.opacity = 1;
+        }
+            
+        else
+        {
+            btn1.classList.remove('active-page'); 
+
+            
+            var index1 = btn1.id.charAt(4);
+            var bx = document.getElementsByClassName("bx")[index1];
+            bx.style.opacity = .9;
+            
+        }
+           
+                    
+    });
+    
+
+    // Change Icon Color
+    Array.from($(".icon_number")).forEach(x=>{
+
+        x.style.opacity = 1;
+
+        if (x.innerText == index1)
+        {
+            x.style.color = "#eb6c6c";
+            x.style.zIndex = 2;
+            
+        }
+            
+        else
+        {
+            x.style.color = "#d1d1d1";
+            x.style.zIndex = -2;
+
+        }
+            
+    })
+
+}
 
 
 function func_switchPanel(e)
@@ -112,6 +179,27 @@ function func_previewPanel(e)
     // Change Class of Scroll Active-Page    
     var id1 = e.currentTarget.id;
     var index1 = id1.charAt(id1.length-1);
+
+
+
+    // Change Icon Color
+    Array.from($(".icon_number")).forEach(x=>{
+
+
+        if (x.innerText == index1)
+        {
+            x.style.color = "#eb6c6c";
+            x.style.zIndex = 2;
+            
+        }
+            
+        else
+        {
+            x.style.zIndex = -2;
+
+        }
+            
+    })
 
 
     // 2b. Change iFrame Panel Page by Current Highlight
