@@ -11,7 +11,8 @@ window.onload = (function () {
     Array.prototype.forEach.call(arr_btn_icon1, btn1 => 
     {        
         btn1.addEventListener('click', func_switchPanel);
-        
+
+        btn1.addEventListener('mouseenter', func_previewPanel);
     });
 
     
@@ -30,6 +31,7 @@ function func_switchPanel(e)
         {
             btn1.classList.add('active-page');
 
+            
             var index1 = btn1.id.charAt(4);
             var bx = document.getElementsByClassName("bx")[index1];
             bx.style.opacity = 1;
@@ -39,9 +41,11 @@ function func_switchPanel(e)
         {
             btn1.classList.remove('active-page'); 
 
+            
             var index1 = btn1.id.charAt(4);
             var bx = document.getElementsByClassName("bx")[index1];
             bx.style.opacity = .9;
+            
         }
             
                     
@@ -73,6 +77,7 @@ function func_switchPanel(e)
         {
             x.style.color = "#d1d1d1";
             x.style.zIndex = -2;
+
         }
             
     })
@@ -101,4 +106,36 @@ function func_switchPanel(e)
 
 }
 
+
+function func_previewPanel(e)
+{
+    // Change Class of Scroll Active-Page    
+    var id1 = e.currentTarget.id;
+    var index1 = id1.charAt(id1.length-1);
+
+
+    // 2b. Change iFrame Panel Page by Current Highlight
+    var iframe0b = document.getElementsByClassName('iframe0b')[0];
+
+
+    if (iframe0b.src.charAt(iframe0b.src.length-6) == index1)
+        return;
+
+    if (window.location.href.includes('127.0.0.1'))
+        html1 = "http://127.0.0.1:5500/panel/page0" + index1 + ".html";  // for Live Server
+
+    else if (window.location.href.includes('192.168.3.103'))
+        html1 = "http://192.168.3.103:5500/panel/page0" + index1 + ".html";  // for Live Server - WIFI
+
+    else if (window.location.href.includes('172.18.100.21'))
+        html1 = "http://172.18.100.21:5500/panel/page0" + index1 + ".html";  // for Live Server - PC
+
+    else
+        html1 = "../DLN_Revit_Addin_Document/panel/page0" + index1 + ".html"; // for Git Pages
+
+
+
+    iframe0b.src = html1;
+
+}
 
