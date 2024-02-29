@@ -243,10 +243,31 @@
   color: var(--color_grey_dark);
 
   word-wrap: break-word; white-space: pre-wrap;
-  line-height: 17px;
+  line-height: 15px;
 }
     
 #intro_title1
 {
   font-weight: bold; font-size: 13px;
+}
+
+/* */
+#intro_title1.color_intro1
+{
+  color: var(--icon_color_btn_icon1);
+}
+
+#intro_title1.color_intro2
+{
+  color: var(--icon_color_btn_icon2);
+}
+
+#intro_title1.color_intro3
+{
+  color: var(--icon_color_btn_icon3);
+}
+
+#intro_title1.color_intro4
+{
+  color: var(--icon_color_btn_icon4);
 }

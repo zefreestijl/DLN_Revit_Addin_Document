@@ -146,10 +146,22 @@ function func_highlightTool_Red(e, coll)
         else if (content1.id.includes('4'))
             color1 = "darkkhaki";
 
-
+        
         //
-        if ($(".tool1")[i].id === e.target.id 
-        || e.target.parentNode.id === $(".tool1")[i].id)
+        var id1 = e.target.id;
+        var id2 = e.target.parentNode.id;
+
+        if (id1.includes("color"))
+        {            
+            var c1 = e.target.nextElementSibling;
+            id1 = c1.getElementsByClassName("tool1")[0].id;
+            
+        }
+        
+
+
+        if ($(".tool1")[i].id === id1
+        || id2 === $(".tool1")[i].id)
         {
             currentHighlight1 = i;
 
@@ -379,20 +391,22 @@ function func_expand_init(coll)
         coll[i].classList.toggle("active1");
         content.style.maxHeight = content.scrollHeight + "px";
 
-        coll[i].addEventListener("click", function() 
+        coll[i].addEventListener("click", function(e) 
         {
             this.classList.toggle("active1");  
             var content = this.nextElementSibling;   
 
             if (content.style.maxHeight )
             {
-                content.style.maxHeight = null;
+                //content.style.maxHeight = null;
+                
             } 
             else
             {
                 content.style.maxHeight = content.scrollHeight + "px";
             } 
 
+            func_highlightTool_Red(e, coll);
         });
     }
     

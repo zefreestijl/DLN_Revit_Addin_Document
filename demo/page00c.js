@@ -8,7 +8,13 @@ window.onload = (function () {
   
 
   var text_total1 = document.getElementsByClassName('swiper-slide').length;  
+  
+  var delay1 = 6000;
 
+  if (document.getElementsByClassName("swiper-slide").length == 1)
+  {
+    delay1 = 0;
+  }
 
   swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
@@ -20,7 +26,7 @@ window.onload = (function () {
     autoHeight: false,
     
     autoplay: {
-      delay: 6000,
+      delay: delay1,
       disableOnInteraction: false,
 
     },
@@ -45,7 +51,7 @@ window.onload = (function () {
     */
 
     on: {
-      autoplayTimeLeft(s, time, progress) {
+        autoplayTimeLeft(s, time, progress) {
 
         if (time <0) time = 0;
 
@@ -88,8 +94,14 @@ window.onload = (function () {
 
   document.swiper1 = swiper;
 
-  var zoom1 = 100;
+  if (document.getElementsByClassName("swiper-slide").length == 1)
+  {
+    swiper.autoplay = false;
+  }
 
+
+  var zoom1 = 100;
+  
   // Custom Events - numpad +- Zoom
   /*
   document.addEventListener("mousewheel", function(e){ func_mouseWheelZoom(e); });
