@@ -18,7 +18,6 @@ window.onload = (function () {
     });
 
     
-    
 });
 
 function func_changeHighlight(e)
@@ -50,7 +49,7 @@ function func_changeHighlight(e)
             
             var index1 = btn1.id.charAt(4);
             var bx = document.getElementsByClassName("bx")[index1];
-            bx.style.opacity = .9;
+            bx.style.opacity = .5;
             
         }
            
@@ -107,7 +106,7 @@ function func_switchPanel(e)
             
             var index1 = btn1.id.charAt(4);
             var bx = document.getElementsByClassName("bx")[index1];
-            bx.style.opacity = .9;
+            bx.style.opacity = .5;
             
         }
             

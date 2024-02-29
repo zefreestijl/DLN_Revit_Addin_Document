@@ -9,6 +9,11 @@
     --icon_color_btn_icon2: darkseagreen;
     --icon_color_btn_icon3: lightskyblue;
     --icon_color_btn_icon4: darkkhaki;
+
+    --icon_color_btn_icon1d: rgb(185, 152, 108);
+    --icon_color_btn_icon2d: rgb(111, 148, 111);
+    --icon_color_btn_icon3d: rgb(85, 130, 158);
+    --icon_color_btn_icon4d: rgb(151, 147, 84);
 }
 
 
@@ -81,6 +86,7 @@
 .active-page{
     position: relative;
     /*color: var(--icon_color_hover);*/
+    
 }
 
 .active-page::after{
@@ -95,8 +101,6 @@
 
 
 
-
-
 /* Icon Hover - Color */
 .top_btn::after{
     background-color: var(--icon_color_hover);
@@ -105,25 +109,28 @@
 
 
 
+
 /* Icon Color */
 .btn_icon1{
-    color: var(--icon_color_btn_icon1);
-    opacity: .9;
+    color: var(--icon_color_btn_icon1d);
+    opacity: .5; 
+
+    
 }
 
 .btn_icon2{
-    color: var(--icon_color_btn_icon2);
-    opacity: .9;
+    color: var(--icon_color_btn_icon2d);
+    opacity: .5;
 }
 
 .btn_icon3{
-    color: var(--icon_color_btn_icon3);
-    opacity: .9;
+    color: var(--icon_color_btn_icon3d);
+    opacity: .5;
 }
 
 .btn_icon4{
-    color: var(--icon_color_btn_icon4);
-    opacity: .9;
+    color: var(--icon_color_btn_icon4d);
+    opacity: .5;
 }
 
 
