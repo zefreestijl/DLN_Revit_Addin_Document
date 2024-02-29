@@ -254,6 +254,8 @@
 #intro_title1
 {
   font-weight: bold; font-size: 13px;
+
+  pointer-events: none;
 }
 
 /* */
