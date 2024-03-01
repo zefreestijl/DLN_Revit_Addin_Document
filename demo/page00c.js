@@ -5,6 +5,7 @@ var isLandscape1 = true;
 
 window.onload = (function () {
 
+
   const progressCircle = document.querySelector(".autoplay-progress svg");
   const progressContent = document.querySelector(".autoplay-progress span");
   
@@ -53,17 +54,16 @@ window.onload = (function () {
     */
 
     on: {
-
         autoplayTimeLeft(s, time, progress) {
 
         if (time <0) time = 0;
 
         progressCircle.style.setProperty("--progress", 1 - progress);
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        progressContent.textContent = `${Math.ceil(time / 1000)}`;
         
 
       },
-
+      
     }
 
 
@@ -127,6 +127,42 @@ window.onload = (function () {
     swiper.autoplay.start();
     swiper.update();
     swiper.autoplay.pause();
+
+
+    // control left0b
+    left0b = window.parent.document.getElementsByClassName('left0b')[0];
+
+    if (window.getComputedStyle(left0b).width == "0px")
+    {
+      left0b.style.width = "22rem";
+      left0b.style.opacity = 1;
+      //left0b.style.display = 'block';
+
+      //
+      try
+      { $("#control_all1")[0].classList.remove("bx-collapse"); }
+      finally{}
+
+      $("#control_all1")[0].classList.add("bx-expand");
+    }
+        
+    else if (window.getComputedStyle(left0b).width == "22rem" 
+      || !left0b.style.display)
+    {
+      left0b.style.width = "0px";
+      left0b.style.opacity = 0;
+      //left0b.style.display = 'none';
+          
+      //
+      try
+      { $("#control_all1")[0].classList.remove("bx-expand"); }
+      finally{}
+
+      $("#control_all1")[0].classList.add("bx-collapse");
+    }
+        
+
+
   });
 
 
@@ -207,7 +243,8 @@ window.onload = (function () {
 
   });
 
-  // make sure update() fired at the end to update icon colors
+
+  // make sure update fired at the end to update icon colors
   swiper.update();
 }); 
 

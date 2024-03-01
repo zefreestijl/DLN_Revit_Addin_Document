@@ -64,7 +64,7 @@ iframe{
 
 iframe.iframe0c{
     position: relative; /* We need to add this to help position the left & top property of the element. Else it would just be on the top of container tag. */
-    left: 1%; top: 0;
+    left: 0%; top: 0;
     width: 99%; height: 10;
 
 }
@@ -79,6 +79,7 @@ iframe.iframe0c{
 .middle {
     border: 5px solid white; 
     border-left: 1px solid #c3c3c3; 
+
     width: 10px;
     background-color: white; 
     position: relative;
