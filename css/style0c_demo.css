@@ -195,5 +195,5 @@
     width: 90vh; 
     /* overflow-x: hidden; overflow-y: auto; */
 
-    font-size: 0;
+    font-size: 0px; line-height: 0px;
   }
