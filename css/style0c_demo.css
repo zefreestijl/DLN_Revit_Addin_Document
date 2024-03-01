@@ -191,7 +191,7 @@
 
   .rotated-div{
     transform-origin: top left;
-    transform: rotate(-90deg)  translateX(10%); 
+    transform: rotate(-90deg)  translateX(-105%); 
     
 
     width: 90vh; 
