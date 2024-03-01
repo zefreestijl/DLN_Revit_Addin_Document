@@ -36,7 +36,7 @@
   .bx:not(.bx-pointer){
     padding-bottom: 5px;
     color: var(--icon-font-color);
-    background-color: white;
+    /*background-color: white;*/
   }
 
   .bx:not(.bx-pointer):hover{
@@ -61,6 +61,19 @@
     padding-bottom: 50px;
   }
 
+
+
+
+  #control_rotate1{
+    padding-top: 50px;
+    
+  }
+
+
+
+
+
+  
   /* Intro */
   .demo_intro{
     padding-top: 30px;
@@ -168,4 +181,19 @@
     
     --swiper-pagination-color: var(--icon_color_btn_icon4);
     
+  }
+
+
+  /* Rotate for Mobile Device*/
+  body{
+    transform-origin: top left;
+  }
+
+  .rotated-div{
+    transform-origin: top left;
+    transform: rotate(-90deg)  translateX(10%); 
+    
+
+    width: 90vh; 
+    overflow-x: hidden; overflow-y: auto;
   }

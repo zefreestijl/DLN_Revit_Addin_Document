@@ -1,5 +1,7 @@
 var swiper = null;
 
+var isLandscape1 = true;
+
 
 window.onload = (function () {
 
@@ -171,6 +173,13 @@ window.onload = (function () {
 
 
 
+  // Custom Events - Button Rotate
+  $("#control_rotate1").on('click', function(){
+    func_toggleRotate();    
+  });
+
+
+
 
 
   // Custom Events - Swiper
@@ -194,6 +203,52 @@ window.onload = (function () {
 
 }); 
 
+
+
+function func_toggleRotate()
+{
+  var demo_intro = document.getElementsByClassName('demo_intro');
+
+
+  // 1. Switch States & Icon
+  if (isLandscape1 == true) 
+  {
+    try
+    { $("#control_rotate1")[0].classList.remove("bx-mobile-landscape"); }
+    finally{}
+
+    $("#control_rotate1")[0].classList.add("bxs-mobile");
+
+    try
+    {
+      Array.prototype.forEach.call(demo_intro, div => 
+        {     
+          div.classList.add('rotated-div');
+        });
+        
+    }finally{}
+  }
+  else  
+  {
+    try
+    { $("#control_rotate1")[0].classList.remove("bxs-mobile"); }
+    finally{}
+
+    $("#control_rotate1")[0].classList.add("bx-mobile-landscape");
+
+    try
+    {
+      Array.prototype.forEach.call(demo_intro, div => 
+        {     
+          div.classList.remove('rotated-div');
+        });
+        
+    }finally{}
+  }
+
+  isLandscape1 = !isLandscape1;
+  
+}
 
   
 function func_togglePause()
