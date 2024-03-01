@@ -53,59 +53,22 @@ window.onload = (function () {
     */
 
     on: {
+
         autoplayTimeLeft(s, time, progress) {
 
         if (time <0) time = 0;
 
         progressCircle.style.setProperty("--progress", 1 - progress);
         progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-
-        text_steps1.innerText = this.realIndex+1 + " / " + text_total1;
-        text_steps1.style.color = "#707070";
         
-        
-        var controller = document.getElementsByClassName('controller');
-        try
-        {
-          Array.prototype.forEach.call(controller, control => 
-            {     
-              control.style.color = "#707070";
-            });
-            
-        }finally{}
 
-
-        if (this.autoplay.paused)
-        {    
-          try
-          { $("#control_pause1")[0].classList.remove("bx-pause-circle"); }
-          finally{}
-          try
-          { $("#control_pause1")[0].classList.remove("bx-play-circle"); }
-          finally{}
-      
-          $("#control_pause1")[0].classList.add("bx-play-circle");
-
-        }
-        else
-        {    
-          try
-          { $("#control_pause1")[0].classList.remove("bx-pause-circle"); }
-          finally{}
-          try
-          { $("#control_pause1")[0].classList.remove("bx-play-circle"); }
-          finally{}
-      
-          $("#control_pause1")[0].classList.add("bx-pause-circle");
-
-        }
-        
       },
 
     }
 
 
   });
+
 
   document.swiper1 = swiper;
 
@@ -199,7 +162,6 @@ window.onload = (function () {
 
   // Custom Events - Swiper
   swiper.on('click', function () {
-    //console.log(swiper);
     func_togglePause();
     
 
@@ -214,6 +176,35 @@ window.onload = (function () {
     //swiper.zoom.in(1);
     isPaused1 = false;
     
+    text_steps1.innerText = this.realIndex+1 + " / " + text_total1;
+    //
+    try
+    { $("#control_pause1")[0].classList.remove("bx-play-circle"); }
+    finally{}
+
+    $("#control_pause1")[0].classList.add("bx-pause-circle");
+  });
+
+
+  swiper.on('slidesUpdated', function()
+  { 
+        
+    text_steps1.innerText = this.realIndex+1 + " / " + text_total1;
+    text_steps1.style.color = "#707070";
+
+    //
+    var controller = document.getElementsByClassName('controller');
+    try
+    {
+      Array.prototype.forEach.call(controller, control => 
+        {     
+          control.style.color = "#707070";
+        });
+        
+    }finally{}
+
+    //
+
   });
 
 }); 
@@ -280,10 +271,21 @@ function func_togglePause()
   {
     swiper.autoplay.resume();
 
+    try
+    { $("#control_pause1")[0].classList.remove("bx-play-circle"); }
+    finally{}
+
+    $("#control_pause1")[0].classList.add("bx-pause-circle");
   }
   else  
   {
     swiper.autoplay.pause();
+
+    try
+    { $("#control_pause1")[0].classList.remove("bx-pause-circle"); }
+    finally{}
+    $("#control_pause1")[0].classList.add("bx-play-circle");
+
 
   }
 }
