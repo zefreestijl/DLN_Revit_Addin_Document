@@ -61,6 +61,8 @@ window.onload = (function () {
         progressContent.textContent = `${Math.ceil(time / 1000)}s`;
 
         text_steps1.innerText = this.realIndex+1 + " / " + text_total1;
+        text_steps1.style.color = "#707070";
+        
 
         if (this.autoplay.paused)
         {    
@@ -279,7 +281,6 @@ function func_togglePause()
 
 var startX1 = null; var endX1 = null;
 var startY1 = null; var endY1 = null;
-
 var startTime1 = null;
 
 document.addEventListener("touchstart", function(e)

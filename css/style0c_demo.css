@@ -17,7 +17,7 @@
   z-index: 3; position: fixed;
   left: 27px; top: 55px;
   padding: 5; padding-left: 0;
-  color: var(--icon-font-color); 
+  color: var(--swiper-theme-color); 
   background-color: white;
   font-weight: bold; font-size: 13; 
   
