@@ -63,6 +63,17 @@ window.onload = (function () {
         text_steps1.innerText = this.realIndex+1 + " / " + text_total1;
         text_steps1.style.color = "#707070";
         
+        
+        var controller = document.getElementsByClassName('controller');
+        try
+        {
+          Array.prototype.forEach.call(controller, control => 
+            {     
+              control.style.color = "#707070";
+            });
+            
+        }finally{}
+
 
         if (this.autoplay.paused)
         {    
