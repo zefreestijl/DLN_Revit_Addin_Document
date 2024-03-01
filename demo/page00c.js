@@ -41,6 +41,10 @@ window.onload = (function () {
       progressbarOpposite: false,
     },
 
+    zoom: {
+      maxRatio: 1.1,
+      minRatio: 0.3,
+    },
 
     /*
     navigation: {
@@ -118,12 +122,8 @@ window.onload = (function () {
     //swiper.zoom.in(scale1);
 
     zoom1 += 10;
-    
-    try{
-      $(".swiper-zoom-container")[swiper.realIndex]
+    $(".swiper-zoom-container")[swiper.realIndex]
     .style.setProperty("zoom", zoom1 + "%");
-    }finally{}
-    
 
     swiper.autoplay.start();
     swiper.update();
@@ -180,7 +180,9 @@ window.onload = (function () {
   });
 
 
-
+  // Get Initialized Rotation
+  if (window.parent.document.isLandscape1 == false)
+    func_toggleRotate();
 
 
   // Custom Events - Swiper
@@ -205,7 +207,6 @@ window.onload = (function () {
 }); 
 
 
-
 function func_toggleRotate()
 {
   var demo_intro = document.getElementsByClassName('demo_intro');
@@ -228,6 +229,9 @@ function func_toggleRotate()
         });
         
     }finally{}
+
+    swiper.zoom.disable();
+    window.parent.document.isLandscape1 = false;
   }
   else  
   {
@@ -237,6 +241,7 @@ function func_toggleRotate()
 
     $("#control_rotate1")[0].classList.add("bx-mobile-landscape");
 
+
     try
     {
       Array.prototype.forEach.call(demo_intro, div => 
@@ -245,6 +250,9 @@ function func_toggleRotate()
         });
         
     }finally{}
+
+    swiper.zoom.enable();
+    window.parent.document.isLandscape1 = true;
   }
 
   isLandscape1 = !isLandscape1;
