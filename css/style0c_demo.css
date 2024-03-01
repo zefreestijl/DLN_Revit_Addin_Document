@@ -192,8 +192,8 @@
   .rotated-div{
     transform-origin: top left;
     transform: rotate(-90deg)  translateX(-105%); 
-    
-
     width: 90vh; 
-    overflow-x: hidden; overflow-y: auto;
+    /* overflow-x: hidden; overflow-y: auto; */
+
+    font-size: 0;
   }
