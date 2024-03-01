@@ -312,9 +312,20 @@ function func_highlightTool_Grey(e, coll)
 
 var startX1 = null; var endX1 = null;
 var startY1 = null; var endY1 = null;
+var startTime1 = null;
 
 document.addEventListener("touchstart", function(e)
 { 
+    if (e.touches.length == 1)
+      startTime1 = Date.now();
+  
+    if (Number(Date.now() -  startTime1) || startTime1 == null)
+    {
+      startX1 = startY1 = endX1 = endY1 = null;
+      startTime1 = null;
+      return;
+    }
+      
     startX1 = e.touches[0].clientX;
     startY1 = e.touches[0].clientY;
 } )
@@ -323,6 +334,9 @@ document.addEventListener("touchend", function(e){ func_slideCheck(e) } )
 
 function func_slideCheck(e)
 {
+    if (Number(Date.now() -  startTime1) < 100 || startX1 == null)
+      return;
+    
     var left0b = this.top.document.getElementsByClassName('left0b')[0];
 
     endX1 = e.changedTouches[0].clientX;

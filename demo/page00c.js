@@ -1,7 +1,6 @@
 var swiper = null;
 
 var isLandscape1 = true;
-var startTime1 = null;
 
 
 window.onload = (function () {
@@ -280,6 +279,8 @@ function func_togglePause()
 
 var startX1 = null; var endX1 = null;
 var startY1 = null; var endY1 = null;
+
+var startTime1 = null;
 
 document.addEventListener("touchstart", function(e)
 { 
