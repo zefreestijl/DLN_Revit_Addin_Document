@@ -1,6 +1,7 @@
 var swiper = null;
 
 var isLandscape1 = true;
+var startTime1 = null;
 
 
 window.onload = (function () {
@@ -40,10 +41,6 @@ window.onload = (function () {
       progressbarOpposite: false,
     },
 
-    zoom: {
-      maxRatio: 1.1,
-      minRatio: 0.3,
-    },
 
     /*
     navigation: {
@@ -121,8 +118,12 @@ window.onload = (function () {
     //swiper.zoom.in(scale1);
 
     zoom1 += 10;
-    $(".swiper-zoom-container")[swiper.realIndex]
+    
+    try{
+      $(".swiper-zoom-container")[swiper.realIndex]
     .style.setProperty("zoom", zoom1 + "%");
+    }finally{}
+    
 
     swiper.autoplay.start();
     swiper.update();
@@ -274,14 +275,29 @@ var startY1 = null; var endY1 = null;
 
 document.addEventListener("touchstart", function(e)
 { 
-    startX1 = e.touches[0].clientX;
-    startY1 = e.touches[0].clientY;
+  
+  if (e.touches.length == 1)
+    startTime1 = Date.now();
+
+  if (Number(Date.now() -  startTime1) || startTime1 == null)
+  {
+    startX1 = startY1 = endX1 = endY1 = null;
+    startTime1 = null;
+    return;
+  }
+    
+
+  startX1 = e.touches[0].clientX;
+  startY1 = e.touches[0].clientY;
 } )
 
 document.addEventListener("touchend", function(e){ func_slideCheck(e) } )
 
 function func_slideCheck(e)
 {
+  if (Number(Date.now() -  startTime1) < 100 || startX1 == null)
+    return;
+
   var left0b = this.top.document.getElementsByClassName('left0b')[0];
 
   
