@@ -207,6 +207,8 @@ window.onload = (function () {
 
   });
 
+  // make sure update() fired at the end to update icon colors
+  swiper.update();
 }); 
 
 
