@@ -188,6 +188,7 @@
     padding: 0 18px; max-height: 0; overflow: hidden; 
     width: var(--width_content);
 
+    background-position: center;
     transition: max-height 0.2s ease-out; 
     background-color: var(--color_grey_light);
     
