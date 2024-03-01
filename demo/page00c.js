@@ -9,7 +9,7 @@ window.onload = (function () {
 
   var text_total1 = document.getElementsByClassName('swiper-slide').length;  
   
-  var delay1 = 6000;
+  var delay1 = 12000;
 
   if (document.getElementsByClassName("swiper-slide").length == 1)
   {

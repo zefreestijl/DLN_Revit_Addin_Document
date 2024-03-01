@@ -11,7 +11,7 @@
   --icon_color_btn_icon2: darkseagreen;
   --icon_color_btn_icon3: lightskyblue;
   --icon_color_btn_icon4: darkkhaki;
-  
+
   --icon_color_btn_icon1d: rgb(185, 152, 108);
   --icon_color_btn_icon2d: rgb(111, 148, 111);
   --icon_color_btn_icon3d: rgb(85, 130, 158);
@@ -242,13 +242,13 @@
 
 /* 4. Intro0 */
 .intro0{
-  user-select: none;
   font-size: 12px;  padding: 0px;
   text-align: left;
   color: var(--color_grey_dark);
 
   word-wrap: break-word; white-space: pre-wrap;
-  line-height: 15px;
+  line-height: 13.5px;
+  user-select: none;
 }
     
 #intro_title1
@@ -256,6 +256,7 @@
   font-weight: bold; font-size: 13px;
 
   pointer-events: none;
+  
 }
 
 /* */
