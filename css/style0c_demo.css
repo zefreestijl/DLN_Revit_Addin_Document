@@ -158,6 +158,8 @@
     color: var(--icon_color_btn_icon1);
     
     --swiper-pagination-color: var(--icon_color_btn_icon1);
+
+    float: left;
   }
   .progress2{
     stroke: var(--icon_color_btn_icon2);
